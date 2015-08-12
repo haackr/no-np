@@ -1,0 +1,9 @@
+{
+  "title": "no-np",
+  "name": "nonp",
+  "version": "1.0.0",
+  "description": "Converts np.reddit.com links to regular reddit links.",
+  "main": "index.js",
+  "author": "Ryan Haack",
+  "license": "GPLv2"
+}
