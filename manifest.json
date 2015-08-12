@@ -13,5 +13,12 @@
     "tabs",
     "http://*.reddit.com/*",
     "https://*.reddit.com/*"
-  ]
+  ],
+
+  "icons": {
+    "64": "no-np64.png",
+    "48": "no-np48.png",
+    "32": "no-np32.png",
+    "16": "no-np16.png"
+  }
 }
