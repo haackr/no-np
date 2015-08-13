@@ -16,9 +16,10 @@
   ],
 
   "icons": {
-    "64": "no-np64.png",
-    "48": "no-np48.png",
-    "32": "no-np32.png",
-    "16": "no-np16.png"
+    "128": "icon128.png",
+    "64": "icon64.png",
+    "48": "icon48.png",
+    "32": "icon32.png",
+    "16": "icon16.png"
   }
 }
