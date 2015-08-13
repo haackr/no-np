@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "no-np",
   "description": "Converts np links on reddit to regular links",
-  "version": "1.0",
+  "version": "1.0.1",
 
   "content_scripts": [{
     "matches": ["http://*.reddit.com/*","https://*.reddit.com/*"],
