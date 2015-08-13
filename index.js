@@ -6,7 +6,6 @@ pageMod.PageMod({
     "*.reddit.com"
   ],
   contentScriptFile: [
-    self.data.url("../jquery-2.1.4.min.js"),
     self.data.url("../fixlinks.js")
   ],
   contentScriptWhen: "start"

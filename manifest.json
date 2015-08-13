@@ -6,7 +6,7 @@
 
   "content_scripts": [{
     "matches": ["http://*.reddit.com/*","https://*.reddit.com/*"],
-    "js": ["jquery-2.1.4.min.js","fixlinks.js"]
+    "js": ["fixlinks.js"]
   }],
 
   "permissions": [
