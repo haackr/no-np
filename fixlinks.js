@@ -1,4 +1,5 @@
 function fixNpLinks(){
+  document.removeEventListener('DOMContentLoaded', fixNpLinks);
   var links = document.getElementsByTagName("a");
   Array.prototype.forEach.call(links, function(el){
     el.href = el.href.replace("np.","www.");
