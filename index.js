@@ -8,5 +8,5 @@ pageMod.PageMod({
   contentScriptFile: [
     self.data.url("../fixlinks.js")
   ],
-  contentScriptWhen: "start"
+  contentScriptWhen: "ready"
 });
