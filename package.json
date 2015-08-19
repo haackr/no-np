@@ -5,6 +5,5 @@
   "description": "Converts np.reddit.com links to regular reddit links.",
   "main": "index.js",
   "author": "haackr",
-  "license": "GPLv2",
-  "icon": "icon48.png"
+  "license": "GPLv2"
 }
