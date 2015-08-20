@@ -5,14 +5,13 @@ var observer = new MutationObserver(function(){
 var observerConfig = { attributes: true, childList: true, characterData: true};
 
 function fixNpLinks(){
-  //document.removeEventListener('DOMContentLoaded', fixNpLinks);
   var links = document.getElementsByTagName("a");
   Array.prototype.forEach.call(links, function(el){
     el.href = el.href.replace("np.","www.");
   });
 }
 
-function ready(fixNpLinks) {
+function ready() {
   if (document.readyState != 'loading'){
     fixNpLinks();
     observer.observe(document.body.querySelector("#siteTable"), observerConfig);
@@ -25,4 +24,11 @@ function ready(fixNpLinks) {
   }
 }
 
-ready(fixNpLinks);
+//On firefox, remove the observer when the addon is removed or disabled.
+if(typeof(self.port) !== "undefined"){
+  self.port.on("detach", function(){
+    observer.disconnect();
+  });
+}
+
+ready();
