@@ -7,17 +7,17 @@ var observerConfig = { attributes: true, childList: true, characterData: true};
 function fixNpLinks(){
   var links = document.getElementsByTagName("a");
   Array.prototype.forEach.call(links, function(el){
-    el.href = el.href.replace(/(www\.)?np\./i,"www.");
+    el.href = el.href.replace(/(www\.)?np\./i, "www.");
   });
 }
 
 function ready() {
-  if (document.readyState != 'loading'){
+  if (document.readyState !== "loading"){
     fixNpLinks();
     observer.observe(document.body.querySelector("#siteTable"), observerConfig);
   } else {
-    document.addEventListener('DOMContentLoaded', function load(){
-      document.removeEventListener('DOMContentLoaded', load);
+    document.addEventListener("DOMContentLoaded", function load(){
+      document.removeEventListener("DOMContentLoaded", load);
       fixNpLinks();
       observer.observe(document.body.querySelector("#siteTable"), observerConfig);
     });
