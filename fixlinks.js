@@ -7,7 +7,9 @@ var observerConfig = { attributes: true, childList: true, characterData: true};
 function fixNpLinks(){
   var links = document.getElementsByTagName("a");
   Array.prototype.forEach.call(links, function(el){
-    el.href = el.href.replace(/(www\.)?np\./i, "www.");
+	if(el.href.match(/(www\.)?np\./i)){
+        el.href = el.href.replace(/(www\.)?np\./i, "www.");
+	}
   });
 }
 
