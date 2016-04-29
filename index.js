@@ -1,12 +1,12 @@
-var self = require("sdk/self");
-var pageMod = require("sdk/page-mod")
+var self = require('sdk/self')
+var pageMod = require('sdk/page-mod')
 
 pageMod.PageMod({
   include: [
-    "*.reddit.com"
+    '*.reddit.com'
   ],
   contentScriptFile: [
-    self.data.url("../fixlinks.js")
+    self.data.url('../fixlinks.js')
   ],
-  contentScriptWhen: "ready"
-});
+  contentScriptWhen: 'ready'
+})
