@@ -1,27 +1,27 @@
 var observer = new MutationObserver(function () {
-  fixNpLinks()
+  fixNpLinks();
 })
 
-var observerConfig = { attributes: true, childList: true, characterData: true }
+var observerConfig = { attributes: true, childList: true, characterData: true, subtree: true, attributeFilter: ['href'] }
 
 function fixNpLinks () {
-  var links = document.getElementsByTagName('a')
+  var links = document.getElementsByTagName('a');
   Array.prototype.forEach.call(links, function (el) {
     if (el.href.match(/(www\.)?np\./i)) {
-      el.href = el.href.replace(/(www\.)?np\./i, 'www.')
+      el.href = el.href.replace(/(www\.)?np\./i, 'www.');
     }
   })
 }
 
 function ready () {
   if (document.readyState !== 'loading') {
-    fixNpLinks()
-    observer.observe(document.body.querySelector('#siteTable'), observerConfig)
+    fixNpLinks();
+    observer.observe(document.body.querySelector('#siteTable'), observerConfig);
   } else {
     document.addEventListener('DOMContentLoaded', function load () {
-      document.removeEventListener('DOMContentLoaded', load)
-      fixNpLinks()
-      observer.observe(document.body.querySelector('#siteTable'), observerConfig)
+      document.removeEventListener('DOMContentLoaded', load);
+      fixNpLinks();
+      observer.observe(document.body.querySelector('#siteTable'), observerConfig);
     })
   }
 }
@@ -29,8 +29,8 @@ function ready () {
 // On firefox, remove the observer when the addon is removed or disabled.
 if (typeof (self.port) !== 'undefined') {
   self.port.on('detach', function () {
-    observer.disconnect()
+    observer.disconnect();
   })
 }
 
-ready()
+ready();
