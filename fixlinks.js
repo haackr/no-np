@@ -16,12 +16,12 @@ function fixNpLinks () {
 function ready () {
   if (document.readyState !== 'loading') {
     fixNpLinks();
-    observer.observe(document.body.querySelector('#siteTable'), observerConfig);
+    observer.observe(document.body, observerConfig);
   } else {
     document.addEventListener('DOMContentLoaded', function load () {
       document.removeEventListener('DOMContentLoaded', load);
       fixNpLinks();
-      observer.observe(document.body.querySelector('#siteTable'), observerConfig);
+      observer.observe(document.body, observerConfig);
     })
   }
 }
